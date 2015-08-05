@@ -34,7 +34,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 set_bash_prompt () {
-    export PS1="\$(python3 ~/bin/rainbowfy $USER@$HOSTNAME)\[\033[0;37m\]:\[\033[0;36m\]\w\[\033[0;36m\]\n>\[\033[0;00m\] "
+    export PS1="$(python3 ~/bin/rainbowfy $USER@$HOSTNAME)\[\033[0;37m\]:\[\033[0;36m\]\w\[\033[0;36m\]\n>\[\033[0;00m\] "
 }
 
 export PROMPT_COMMAND=set_bash_prompt
