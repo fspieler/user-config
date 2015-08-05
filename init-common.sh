@@ -24,4 +24,3 @@ fi
  
 backup_and_link $HOME/bin/rainbowfy rainbowfy/rainbowfy
 
-source ~/.bashrc
