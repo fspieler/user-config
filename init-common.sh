@@ -9,7 +9,9 @@ backup_and_link () {
         return 1;
     fi
     local mv_backup="mv --backup=number --suffix=\"\""
-    $mv_backup $1 $1.bak 2>/dev/null
+    if [ -e $1 ] ; then
+        $mv_backup $1 $1.bak 2>/dev/null
+    fi
     ln -s $PWD/$2 $1
 }
 
@@ -21,6 +23,9 @@ ln -s $PWD/bin/* $HOME/bin
 if [ ! -d rainbowfy ] ; then
     git clone https://github.com/fspieler/rainbowfy.git
 fi
- 
+
+mkdir -p ~/.vim/colors
+backup_and_link ~/.vim/colors/solarized.vim solarized.vim
+
 backup_and_link $HOME/bin/rainbowfy rainbowfy/rainbowfy
 

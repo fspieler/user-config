@@ -16,3 +16,5 @@ autocmd FileType make setlocal noexpandtab
 " scroll by visible line
 nnoremap j gj
 nnoremap k gk
+
+colorscheme solarized
